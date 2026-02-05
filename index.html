@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp Dashboard</title>
+    <link rel="stylesheet" href="webapp_style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📱 Webapp Dashboard</h1>
+                <p>รายงานข้อมูล Webapp ทั้งหมด</p>
+            </div>
+        </header>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="searchName">ค้นหาชื่อ:</label>
+                    <input type="text" id="searchName" placeholder="ค้นหาชื่อ-สกุล...">
+                </div>
+                <div class="filter-group">
+                    <label for="searchPhone">ค้นหาเบอร์:</label>
+                    <input type="text" id="searchPhone" placeholder="ค้นหาเบอร์...">
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-secondary" onclick="applyFilter()">
+                        🔍 ค้นหา
+                    </button>
+                    <button class="btn btn-outline" onclick="resetFilter()">
+                        ↻ รีเซ็ต
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <div class="card-content">
+                    <h3>จำนวนรายการ</h3>
+                    <p id="totalCount" class="card-value">0</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">📍</div>
+                <div class="card-content">
+                    <h3>เลขไมล์สูงสุด</h3>
+                    <p id="maxMile" class="card-value">0</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚗</div>
+                <div class="card-content">
+                    <h3>เฉลี่ยเลขไมล์</h3>
+                    <p id="avgMile" class="card-value">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Table Section -->
+        <section class="table-section">
+            <h2>📋 ข้อมูลทั้งหมด</h2>
+            <div class="table-wrapper">
+                <table id="dataTable" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ลำดับที่</th>
+                            <th>วันที่</th>
+                            <th>ชื่อ-สกุล</th>
+                            <th>เบอร์</th>
+                            <th>เลขไมล์</th>
+                            <th>รูปภาพ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr><td colspan="6" style="text-align: center; padding: 20px;">กำลังโหลด...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Webapp Dashboard. อัพเดท: <span id="lastUpdate"></span></p>
+        </footer>
+    </div>
+
+    <script src="webapp_script.js"></script>
+</body>
+</html>
