@@ -1,7 +1,9 @@
 // ===== Configuration =====
 const SHEET_ID = '18XbeUB-U22t4x--tyrmTKaftokaU1GWwFk4VmfNpa90';
 const SHEET_NAME = 'Webapp';
-const CSV_URL = `https://docs.google.com/spreadsheets/d/18XbeUB-U22t4x--tyrmTKaftokaU1GWwFk4VmfNpa90/export?format=csv`;
+
+// Use the gviz/tq CSV endpoint and specify the sheet by name so we fetch the 'Webapp' tab
+const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
 
 let allData = [];
 let filteredData = [];
